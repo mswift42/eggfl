@@ -26,6 +26,43 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class SearchInput extends StatefulWidget {
+  SearchInput({Key key}) : super(key: key);
+
+  @override
+  _SearchInputState createState() => new _SearchInputState();
+}
+
+class _SearchInputState extends State<SearchInput> {
+  InputValue _currentInput;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentInput = const InputValue();
+  }
+
+  void _handleSubmit(InputValue value) {
+    setState(() {
+      _currentInput = value;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Column(
+      children: <Widget>[
+        new Text(_currentInput.text), // Display the text of the current input
+        new Input(
+          onSubmitted: _handleSubmit,
+          labelText: "Search for Recipes or ingredients...",
+          value: _currentInput,
+        ),
+      ],
+    );
+  }
+}
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -46,7 +83,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  InputValue _currentInput = new InputValue(text: 'Search for recipes or ingredients...');
 
   void _incrementCounter() {
     setState(() {
@@ -57,12 +93,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // setState(), then the build method would not be called again,
       // and so nothing would appear to happen.
       _counter++;
-    });
-  }
-
-  void _handleInputChange(InputValue newInputValue) {
-    setState(() {
-      _currentInput = newInputValue;
     });
   }
 
@@ -77,16 +107,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // our appbar title.
         title: new Text(config.title),
       ),
-      body: new Column(
-          children: <Widget>[
+      body: new Column(children: <Widget>[
         new Text(
           'Button tapped $_counter time${ _counter == 1 ? '' : 's' }.',
         ),
-            new Input(
-                onChanged: _handleInputChange,
-            value: _currentInput
-            )
-    ]),
+        new SearchInput(),
+      ]),
       floatingActionButton: new FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',

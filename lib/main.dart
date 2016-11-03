@@ -52,7 +52,6 @@ class _SearchInputState extends State<SearchInput> {
   Widget build(BuildContext context) {
     return new Column(
       children: <Widget>[
-        new Text(_currentInput.text), // Display the text of the current input
         new Input(
           onSubmitted: _handleSubmit,
           labelText: "Search for Recipes or ingredients...",
@@ -108,16 +107,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: new Text(config.title),
       ),
       body: new Column(children: <Widget>[
-        new Text(
-          'Button tapped $_counter time${ _counter == 1 ? '' : 's' }.',
-        ),
         new SearchInput(),
       ]),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: new Icon(Icons.add),
-      ), // This trailing comma tells the Dart formatter to use
       // a style that looks nicer for build methods.
     );
   }

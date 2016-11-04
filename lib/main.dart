@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:eggflutter/services/Recipe.dart' show Recipe;
+import 'package:eggflutter/services/RecipeService.dart' show RecipeService;
 
 void main() {
   runApp(new MyApp());

@@ -108,9 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
         // our appbar title.
         title: new Text(config.title),
       ),
-      body: new Column(children: <Widget>[
-        new SearchInput(),
-      ]),
+      body: new Container(child:
+          new Column(
+              children: <Widget> [
+                new Padding(padding: const EdgeInsets.all(4.0)),
+                new SearchInput(),
+              ]
+          )
+
+      ),
       // a style that looks nicer for build methods.
     );
   }

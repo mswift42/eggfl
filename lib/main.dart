@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eggflutter/services/Recipe.dart' show Recipe;
 import 'package:eggflutter/services/RecipeService.dart' show RecipeService;
+import 'package:eggflutter/RecipeWidget/RecipeWidget.dart' show RecipeWidget;
 
 void main() {
   runApp(new MyApp());
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+const double _kAppBarHeight = 64.0;
+const double _kRecipePageMaxWidth = 500.0;
 
 class SearchInput extends StatefulWidget {
   SearchInput({Key key}) : super(key: key);
@@ -55,10 +59,9 @@ class _SearchInputState extends State<SearchInput> {
     return new Column(
       children: <Widget>[
         new Input(
-          onSubmitted: _handleSubmit,
-          labelText: "Search for Recipes or ingredients...",
-          value: _currentInput,
-        ),
+            onSubmitted: _handleSubmit,
+            labelText: "  Search for Recipes or ingredients...",
+            value: _currentInput)
       ],
     );
   }
@@ -106,17 +109,17 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that
         // was created by the App.build method, and use it to set
         // our appbar title.
+        expandedHeight: _kAppBarHeight,
         title: new Text(config.title),
       ),
-      body: new Container(child:
-          new Column(
-              children: <Widget> [
-                new Padding(padding: const EdgeInsets.all(4.0)),
-                new SearchInput(),
-              ]
-          )
-
-      ),
+      body: new Container(
+          child: new Column(children: <Widget>[
+        new Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0)),
+        new SearchInput(),
+        new RecipeWidget(),
+      ])),
       // a style that looks nicer for build methods.
     );
   }

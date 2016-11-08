@@ -15,6 +15,10 @@ class LinkTextSpan extends TextSpan {
 }
 
 class RecipeWidget extends StatelessWidget {
+  String title;
+  String image_url;
+  String publisher;
+  String publisher_url;
   @override
   build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);

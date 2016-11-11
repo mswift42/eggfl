@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:eggflutter/services/Recipe.dart' show Recipe;
 import 'package:eggflutter/services/RecipeService.dart' show RecipeService;
 import 'package:eggflutter/RecipeWidget/RecipeWidget.dart' show RecipeWidget;
+import 'package:eggflutter/RecipeWidget/RecipeListWidget.dart';
 
 void main() {
   runApp(new MyApp());
@@ -34,6 +35,8 @@ const double _kRecipePageMaxWidth = 500.0;
 
 class SearchInput extends StatefulWidget {
   SearchInput({Key key}) : super(key: key);
+  static final GlobalKey<ScrollableState> _scrollableKey =
+      new GlobalKey<ScrollableState>();
 
   @override
   _SearchInputState createState() => new _SearchInputState();
@@ -118,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             padding:
                 const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0)),
         new SearchInput(),
-        new RecipeWidget(),
+        new RecipeBlockItem(),
       ])),
       // a style that looks nicer for build methods.
     );

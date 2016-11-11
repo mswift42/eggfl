@@ -15,6 +15,7 @@ class RecipeBlockState extends State<RecipeBlockItem> {
   @override
   Widget build(BuildContext context) {
     return new Block(
+      scrollableKey: _scrollableKey,
       children: recipeitems,
       padding: const EdgeInsets.all(2.0),
       initialScrollOffset: 1.0,

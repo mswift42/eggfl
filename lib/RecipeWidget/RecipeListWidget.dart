@@ -15,16 +15,17 @@ class RecipeBlockState extends State<RecipeBlockItem> {
   @override
   Widget build(BuildContext context) {
     return new Block(
+
       scrollableKey: _scrollableKey,
       children: recipeitems,
       padding: const EdgeInsets.all(2.0),
-      initialScrollOffset: 1.0,
     );
   }
 }
 
 class RecipeBlockItem extends StatefulWidget {
-  RecipeBlockItem({Key key}) : super(key: key);
+  final GlobalKey<ScrollableState> scrollableKey;
+  RecipeBlockItem({Key key, this.scrollableKey}) : super(key: key);
   @override
   RecipeBlockState createState() => new RecipeBlockState();
 }

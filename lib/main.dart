@@ -35,8 +35,6 @@ const double _kRecipePageMaxWidth = 500.0;
 
 class SearchInput extends StatefulWidget {
   SearchInput({Key key}) : super(key: key);
-  static final GlobalKey<ScrollableState> _scrollableKey =
-      new GlobalKey<ScrollableState>();
 
   @override
   _SearchInputState createState() => new _SearchInputState();
@@ -71,7 +69,8 @@ class _SearchInputState extends State<SearchInput> {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key, this.title, this.scrollableKey}) : super(key: key);
+  final GlobalKey<ScrollableState> scrollableKey;
 
   // This widget is the home page of your application. It is stateful,
   // meaning that it has a State object (defined below) that contains
@@ -85,12 +84,11 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => new _MyHomePageState(scrollableKey);
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that
@@ -121,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
             padding:
                 const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0)),
         new SearchInput(),
-        new RecipeBlockItem(),
+        new RecipeBlockItem(scrollableKey: scrollablekey),
       ])),
       // a style that looks nicer for build methods.
     );

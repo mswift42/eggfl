@@ -1,7 +1,7 @@
 import 'package:eggflutter/services/Recipe.dart';
 import 'dart:convert';
 
-final List<Recipe> mockrecipes = [
+final List<Recipe> mockrecipes = <Recipe>[
   new Recipe(
       "The Pioneer Woman",
       "French Onion Soup Stuffed Mushrooms",
@@ -37,5 +37,5 @@ final List<Recipe> mockrecipes = [
       "Cannoli Stuffed French Toast",
       "http://www.twopeasandtheirpod.com/cannoli-stuffed-french-toast/",
       "http://static.food2fork.com/cannolistuffedfrenchtoast48a37.jpg",
-      "http://www.twopeasandtheirpod.com")
+      "http://www.twopeasandtheirpod.com"),
 ];

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:eggflutter/services/mockRecipeService/MockRecipeService.dart';
-import 'RecipeWidget/RecipeWidget.dart';
+import 'package:eggflutter/RecipeWidget/RecipeWidget.dart' show RecipeWidget;
 import 'package:eggflutter/services/Recipe.dart';
 
 class EggCrackinHome extends StatelessWidget {
@@ -29,7 +29,12 @@ class RecipeListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       scrollableKey: scrollablekey,
-      appBar: new AppBar(title: new Text("Egg Crackin!")),
+      appBar: new AppBar(
+          leading: new IconButton(
+              icon: new Icon(Icons.search),
+              tooltip: "Search for Recipes or ingredients",
+              onPressed: null),
+          title: new Text("Egg Crackin!")),
       body: new LazyBlock(
         scrollableKey: scrollablekey,
         delegate: new LazyBlockChildren(children: _recipes),

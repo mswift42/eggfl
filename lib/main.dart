@@ -23,9 +23,9 @@ class RecipeListPage extends StatelessWidget {
     return new Scaffold(
       scrollableKey: scrollablekey,
       appBar: new AppBar(title: new Text("Egg Crackin!")),
-      body: new Block(
+      body: new LazyBlock(
         scrollableKey: scrollablekey,
-        children: _recipes,
+        delegate: new LazyBlockChildren(children: _recipes),
       ),
     );
   }

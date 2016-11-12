@@ -26,7 +26,7 @@ class RecipeWidget extends StatelessWidget {
     final TextStyle linkStyle =
         themeData.textTheme.body2.copyWith(color: themeData.accentColor);
     return new Card(
-        color: Colors.white,
+        color: Colors.amber[50],
          child: new Column(
             children: <Widget>[
               new Padding(padding: const EdgeInsets.all(16.0) ,child:

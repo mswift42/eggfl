@@ -9,15 +9,22 @@ class EggCrackinHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(title: 'EggCrackin', home: new RecipeListPage());
+    return new MaterialApp(
+        title: 'EggCrackin',
+        home: new RecipeListPage(),
+        theme: new ThemeData(
+          primarySwatch: Colors.amber,
+        ));
   }
 }
 
 class RecipeListPage extends StatelessWidget {
   final GlobalKey<ScrollableState> scrollablekey =
       new GlobalKey<ScrollableState>();
-  List<Widget> _recipes = mockrecipes.map((i) =>
-      new RecipeWidget(i.title, i.image_url, i.publisher, i.publisher_url)).toList();
+  List<Widget> _recipes = mockrecipes
+      .map((i) =>
+          new RecipeWidget(i.title, i.image_url, i.publisher, i.publisher_url))
+      .toList();
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

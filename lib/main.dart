@@ -18,7 +18,12 @@ class EggCrackinHome extends StatelessWidget {
   }
 }
 
-class RecipeListPage extends StatelessWidget {
+class RecipeListPage extends StatefulWidget {
+  @override
+  _RecipeListPageState createState() => new _RecipeListPageState();
+}
+
+class _RecipeListPageState extends State<RecipeListPage> {
   final GlobalKey<ScrollableState> scrollablekey =
       new GlobalKey<ScrollableState>();
   List<Widget> _recipes = mockrecipes

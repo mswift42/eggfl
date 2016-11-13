@@ -26,26 +26,27 @@ class RecipeWidget extends StatelessWidget {
     final TextStyle linkStyle =
         themeData.textTheme.body2.copyWith(color: themeData.accentColor);
     return new Card(
-        color: Colors.white,
-         child: new Column(
-            children: <Widget>[
-              new Container(child:
-              new Image(image: new NetworkImage(image_url))),
-              new Padding(padding: const EdgeInsets.all(16.0) ,child:
-              new Text(title)),
-              new Padding(padding: const EdgeInsets.all(16.0), child:
-              new Row(children: <Widget>[
+      color: Colors.white,
+      child: new Column(
+        children: <Widget>[
+          new Row(children: <Widget>[
+            new Flexible(
+                child: new Image.network(image_url, fit: ImageFit.cover))
+          ]),
+          new Padding(
+              padding: const EdgeInsets.all(16.0), child: new Text(title)),
+          new Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: new Row(children: <Widget>[
                 new Flexible(child: new Text(publisher)),
                 new RichText(
                     text: new TextSpan(children: <TextSpan>[
                   new LinkTextSpan(
-                      style: linkStyle,
-                      url: publisher_url,
-                      text: publisher),
+                      style: linkStyle, url: publisher_url, text: publisher),
                 ]))
               ])),
-            ],
-          ),
-        );
+        ],
+      ),
+    );
   }
 }

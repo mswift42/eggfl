@@ -35,6 +35,10 @@ class RecipeService {
     return url;
   }
 
+  String recipeDetailUrl(String recipeid) {
+
+  }
+
   String addPage(String query, num pagenumber) {
     return query + '&page=$pagenumber';
   }

@@ -2,7 +2,7 @@ class Recipe {
   String publisher, title, source_url, image_url, publisher_url, recipe_id;
 
   Recipe(this.publisher, this.title, this.source_url, this.image_url,
-      this.publisher_url, recipe_id);
+      this.publisher_url, this.recipe_id);
 
   Recipe.fromJsonMap(Map recipemap) {
     publisher = recipemap["publisher"];

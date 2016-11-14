@@ -19,7 +19,8 @@ class RecipeWidget extends StatelessWidget {
   String image_url;
   String publisher;
   String publisher_url;
-  RecipeWidget(this.title, this.image_url, this.publisher, this.publisher_url);
+  String recipe_id;
+  RecipeWidget(this.title, this.image_url, this.publisher, this.publisher_url, this.recipe_id);
   @override
   build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);

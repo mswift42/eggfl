@@ -8,14 +8,13 @@ class RecipeBlockState extends State<RecipeBlockItem> {
   static final GlobalKey<ScrollableState> _scrollableKey =
       new GlobalKey<ScrollableState>();
   List<Widget> recipeitems = mockrecipes
-      .map((i) =>
-          new RecipeWidget(i.title, i.image_url, i.publisher, i.publisher_url))
+      .map((i) => new RecipeWidget(
+          i.title, i.image_url, i.publisher, i.publisher_url, i.recipe_id))
       .toList();
 
   @override
   Widget build(BuildContext context) {
     return new Block(
-
       scrollableKey: _scrollableKey,
       children: recipeitems,
       padding: const EdgeInsets.all(2.0),

@@ -27,8 +27,8 @@ class _RecipeListPageState extends State<RecipeListPage> {
   final GlobalKey<ScrollableState> scrollablekey =
       new GlobalKey<ScrollableState>();
   List<Widget> _recipes = mockrecipes
-      .map((i) =>
-          new RecipeWidget(i.title, i.image_url, i.publisher, i.publisher_url))
+      .map((i) => new RecipeWidget(
+          i.title, i.image_url, i.publisher, i.publisher_url, i.recipe_id))
       .toList();
   @override
   Widget build(BuildContext context) {

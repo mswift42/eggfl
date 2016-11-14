@@ -10,7 +10,7 @@ class Recipe {
     source_url = recipemap["source_url"].toString();
     image_url = recipemap["image_url"];
     publisher_url = recipemap["publisher_url"];
-    recipe_id = recipemap["id"];
+    recipe_id = recipemap["recipe_id"];
   }
 
   String _unsanitize(String s) {

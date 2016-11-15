@@ -1,0 +1,1 @@
+import 'package:eggflutter/services/Recipe.dart' show Recipe;

@@ -26,7 +26,7 @@ void main() {
     expect(fs.isFavourite(r1), false);
   });
   test('isFavourite checks if a given recipe is in favourites', () {
-      var fs = new FavouriteService();
+    var fs = new FavouriteService();
     Recipe r1 = mockrecipes[0];
     expect(fs.isFavourite(r1), false);
     fs.addFavourite(r1);
@@ -34,5 +34,10 @@ void main() {
     expect(fs.isFavourite(mockrecipes[1]), false);
     fs.addFavourite(mockrecipes[1]);
     expect(fs.isFavourite(mockrecipes[1]), true);
+  });
+  test('favourites returns a set of recipes', () {
+    var fs = new FavouriteService();
+    mockrecipes.forEach((i) => fs.addFavourite(i));
+    expect(fs.favourites.length, 6);
   });
 }

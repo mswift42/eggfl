@@ -26,6 +26,7 @@ class RecipeWidget extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     final TextStyle linkStyle =
         themeData.textTheme.body2.copyWith(color: themeData.accentColor);
+    final bool isFavourite = false;
     return new Card(
       color: Colors.white,
       child: new Column(

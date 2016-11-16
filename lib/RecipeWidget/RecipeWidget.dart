@@ -51,7 +51,8 @@ class _RecipeWidgetState extends State<RecipeWidget> {
                   child: new Image.network(image_url, fit: ImageFit.cover))
             ]),
             new Positioned(
-                right: 22.0,
+                right: 16.0,
+                top: 32.0,
                 child: new FloatingActionButton(
                     child: new Icon(
                         isFavourite ? Icons.favorite : Icons.favorite_border),

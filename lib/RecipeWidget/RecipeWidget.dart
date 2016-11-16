@@ -20,7 +20,8 @@ class RecipeWidget extends StatelessWidget {
   String publisher;
   String publisher_url;
   String recipe_id;
-  RecipeWidget(this.title, this.image_url, this.publisher, this.publisher_url, this.recipe_id);
+  RecipeWidget(this.title, this.image_url, this.publisher, this.publisher_url,
+      this.recipe_id);
   @override
   build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
@@ -31,9 +32,16 @@ class RecipeWidget extends StatelessWidget {
       color: Colors.white,
       child: new Column(
         children: <Widget>[
-          new Row(children: <Widget>[
-            new Flexible(
-                child: new Image.network(image_url, fit: ImageFit.cover))
+          new Stack(children: <Widget>[
+            new Row(children: <Widget>[
+              new Flexible(
+                  child: new Image.network(image_url, fit: ImageFit.cover))
+            ]),
+            new Positioned(
+                right: 22.0,
+                child: new FloatingActionButton(
+                    child: new Icon(
+                        isFavourite ? Icons.favorite : Icons.favorite_border)))
           ]),
           new Padding(
               padding: const EdgeInsets.all(16.0), child: new Text(title)),

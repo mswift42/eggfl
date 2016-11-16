@@ -41,7 +41,8 @@ class RecipeWidget extends StatelessWidget {
                 right: 22.0,
                 child: new FloatingActionButton(
                     child: new Icon(
-                        isFavourite ? Icons.favorite : Icons.favorite_border)))
+                        isFavourite ? Icons.favorite : Icons.favorite_border),
+                    onPressed: null))
           ]),
           new Padding(
               padding: const EdgeInsets.all(16.0), child: new Text(title)),

@@ -5,7 +5,7 @@ import '../services/Recipe.dart';
 
 class RecipeService {
   final String _food2forkapikey = '7987c43afcf8a03a964bbcb0c9152c84';
-  final String _food2forkbaseurl = 'http://food2fork.com/api/get';
+  final String _food2forkbaseurl = 'http://food2fork.com/api/';
   List<Recipe> recipes = [];
   List<Recipe> _nextPage = [];
 
@@ -37,7 +37,7 @@ class RecipeService {
   }
 
   String recipeDetailUrl(String recipeid) {
-    return _food2forkbaseurl + "?key=" + _food2forkapikey + "rId=" + recipeid;
+    return _food2forkbaseurl + "get?key=" + _food2forkapikey + "rId=" + recipeid;
   }
 
   String addPage(String query, num pagenumber) {

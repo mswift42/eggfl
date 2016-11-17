@@ -16,6 +16,7 @@ class Recipe {
     image_url = recipemap["image_url"];
     publisher_url = recipemap["publisher_url"];
     recipe_id = recipemap["recipe_id"];
+    ingredients = recipemap["ingredients"];
   }
 
   String _unsanitize(String s) {

@@ -14,7 +14,7 @@ class LinkTextSpan extends TextSpan {
               });
 }
 
-class RecipeWidget extends StatefulWidget {
+class RecipeWidget extends StatelessWidget {
   String title;
   String image_url;
   String publisher;
@@ -22,19 +22,6 @@ class RecipeWidget extends StatefulWidget {
   String recipe_id;
   RecipeWidget(this.title, this.image_url, this.publisher, this.publisher_url,
       this.recipe_id);
-  @override
-  _RecipeWidgetState createState() => new _RecipeWidgetState(
-      title, image_url, publisher, publisher_url, recipe_id);
-}
-
-class _RecipeWidgetState extends State<RecipeWidget> {
-  String title;
-  String image_url;
-  String publisher;
-  String publisher_url;
-  String recipe_id;
-  _RecipeWidgetState(this.title, this.image_url, this.publisher,
-      this.publisher_url, this.recipe_id);
   @override
   build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);

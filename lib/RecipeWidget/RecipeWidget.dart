@@ -23,8 +23,8 @@ class RecipeWidget extends StatefulWidget {
   RecipeWidget(this.title, this.image_url, this.publisher, this.publisher_url,
       this.recipe_id);
   @override
-  _RecipeWidgetState createState() => new _RecipeWidgetState(title, image_url,
-      publisher, publisher_url, recipe_id);
+  _RecipeWidgetState createState() => new _RecipeWidgetState(
+      title, image_url, publisher, publisher_url, recipe_id);
 }
 
 class _RecipeWidgetState extends State<RecipeWidget> {
@@ -33,8 +33,8 @@ class _RecipeWidgetState extends State<RecipeWidget> {
   String publisher;
   String publisher_url;
   String recipe_id;
-  _RecipeWidgetState(this.title, this.image_url, this.publisher, this.publisher_url,
-      this.recipe_id);
+  _RecipeWidgetState(this.title, this.image_url, this.publisher,
+      this.publisher_url, this.recipe_id);
   @override
   build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
@@ -47,8 +47,10 @@ class _RecipeWidgetState extends State<RecipeWidget> {
         children: <Widget>[
           new Stack(children: <Widget>[
             new Row(children: <Widget>[
-              new Flexible(
-                  child: new Image.network(image_url, fit: ImageFit.cover))
+              new Hero(
+                  tag: image_url,
+                  child: new Flexible(
+                      child: new Image.network(image_url, fit: ImageFit.cover)))
             ]),
             new Positioned(
                 right: 16.0,

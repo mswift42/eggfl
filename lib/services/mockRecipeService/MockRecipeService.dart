@@ -134,4 +134,27 @@ final List<Recipe> mockrecipes = <Recipe>[
         "2 tablespoons butter",
         "Powdered sugar for serving"
       ]),
+  new Recipe(
+      publisher: "All Recipes",
+      title: "Overnight Blueberry French Toast",
+      source_url:
+          "http://allrecipes.com/Recipe/Overnight-Blueberry-French-Toast/Detail.aspx",
+      image_url: "http://static.food2fork.com/38151724f8.jpg",
+      publisher_url: "http://allrecipes.com",
+      recipe_id: "18647",
+      ingredients: [
+        "12 slices day-old bread, cut into 1-inch cubes",
+        "2 (8 ounce) packages cream cheese, cut into 1 inch cubes",
+        "1 cub fresh blueberries",
+        "12 eggs, beaten",
+        "2 cups milk",
+        "1 teaspoon vanilla extract",
+        "1/3 cup maple syrup",
+        "1 cup white sugar",
+        "2 tablespoons cornstarch",
+        "1 cup water",
+        "1 cup fresh blueberries",
+        "1 tablespoon butter"
+      ]),
+
 ];

@@ -16,12 +16,22 @@ class LinkTextSpan extends TextSpan {
 class RecipeListItem extends StatelessWidget {
   String title;
   String image_url;
-  String publisher;
   String recipe_id;
-  RecipeListItem(this.title, this.image_url, this.publisher, this.recipe_id);
+  RecipeListItem(this.title, this.image_url, this.recipe_id);
 
   @override
   build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
+    return new Card(
+      color: Colors.white,
+    child: new Column(
+      children: <Widget>[
+        new Hero(
+          tag: image_url,
+          child: new Image.network(image_url, fit: ImageFit.cover),
+        )
+      ],
+    ),
+    );
   }
 }

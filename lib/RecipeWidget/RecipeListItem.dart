@@ -24,14 +24,17 @@ class RecipeListItem extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     return new Card(
       color: Colors.white,
-    child: new Column(
-      children: <Widget>[
-        new Hero(
-          tag: image_url,
-          child: new Image.network(image_url, fit: ImageFit.cover),
-        )
-      ],
-    ),
+      child: new Column(
+        children: <Widget>[
+          new Row(children: <Widget>[
+          new Hero(
+              tag: image_url,
+              child: new Flexible(
+                child: new Image.network(image_url, fit: ImageFit.cover),
+              ))
+      ]),
+        ],
+      ),
     );
   }
 }

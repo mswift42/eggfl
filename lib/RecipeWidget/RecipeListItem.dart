@@ -26,13 +26,14 @@ class RecipeListItem extends StatelessWidget {
       color: Colors.white,
       child: new Column(
         children: <Widget>[
-          new Row(children: <Widget>[
           new Hero(
-              tag: image_url,
-              child: new Flexible(
+            tag: image_url,
+            child: new Row(children: <Widget>[
+              new Flexible(
                 child: new Image.network(image_url, fit: ImageFit.cover),
-              ))
-      ]),
+              ),
+            ]),
+          )
         ],
       ),
     );

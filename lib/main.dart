@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eggflutter/services/mockRecipeService/MockRecipeService.dart';
 import 'package:eggflutter/RecipeWidget/RecipeWidget.dart' show RecipeWidget;
+import 'package:eggflutter/RecipeWidget/RecipeListItem.dart' show RecipeListItem;
 import 'package:eggflutter/services/Recipe.dart';
 
 class EggCrackinHome extends StatelessWidget {
@@ -27,8 +28,8 @@ class _RecipeListPageState extends State<RecipeListPage> {
   final GlobalKey<ScrollableState> scrollablekey =
       new GlobalKey<ScrollableState>();
   List<Widget> _recipes = mockrecipes
-      .map((i) => new RecipeWidget(
-          i.title, i.image_url, i.publisher, i.publisher_url, i.recipe_id))
+      .map((i) => new RecipeListItem(
+          i.title, i.image_url,  i.recipe_id))
       .toList();
   @override
   Widget build(BuildContext context) {

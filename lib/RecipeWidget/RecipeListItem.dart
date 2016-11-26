@@ -33,7 +33,15 @@ class RecipeListItem extends StatelessWidget {
                 child: new Image.network(image_url, fit: ImageFit.cover),
               ),
             ]),
-          )
+          ),
+          new Row(children: <Widget>[
+            new Flexible(
+              child: new RichText(
+                  text: new TextSpan(children: <TextSpan>[
+                new TextSpan(text: title, style: themeData.textTheme.body1)
+              ])),
+            )
+          ])
         ],
       ),
     );

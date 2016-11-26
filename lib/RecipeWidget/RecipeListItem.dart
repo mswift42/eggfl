@@ -34,14 +34,15 @@ class RecipeListItem extends StatelessWidget {
               ),
             ]),
           ),
-          new Row(children: <Widget>[
-            new Flexible(
-              child: new RichText(
+          new Padding(
+              child: new Row(children: <Widget>[
+                new RichText(
                   text: new TextSpan(children: <TextSpan>[
-                new TextSpan(text: title, style: themeData.textTheme.body1)
-              ])),
-            )
-          ])
+                    new TextSpan(text: title, style: themeData.textTheme.body1)
+                  ]),
+                )
+              ]),
+              padding: const EdgeInsets.all(16.0)),
         ],
       ),
     );

@@ -17,7 +17,9 @@ class RecipeListItem extends StatelessWidget {
   String title;
   String image_url;
   String recipe_id;
-  RecipeListItem(this.title, this.image_url, this.recipe_id);
+
+  final VoidCallback onTap;
+  RecipeListItem(this.title, this.image_url, this.recipe_id, this.onTap);
 
   @override
   build(BuildContext context) {

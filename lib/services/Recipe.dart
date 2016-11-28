@@ -5,7 +5,8 @@ class Recipe {
       this.source_url,
       this.image_url,
       this.publisher_url,
-      this.recipe_id, this.ingredients});
+      this.recipe_id,
+      this.ingredients});
   String publisher, title, source_url, image_url, publisher_url, recipe_id;
   List<String> ingredients;
 

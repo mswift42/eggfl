@@ -48,6 +48,19 @@ class _RecipeListPageState extends State<RecipeListPage> {
       ),
     );
   }
+
+  void showRecipeDetail(BuildContext context, Recipe recipe) {
+    Navigator.push(context, new MaterialPageRoute<Null>(
+        settings: const RouteSettings(name: 'eggcrack/recipe'),
+    builder: (BuildContext context) {
+          return new Theme(
+              data: new ThemeData.fallback(),
+          child: new RecipeWidget(recipe.title, recipe.image_url, recipe.publisher,
+          recipe.publisher_url, recipe.recipe_id)
+          );
+    }
+    ))
+  }
 }
 
 void main() {

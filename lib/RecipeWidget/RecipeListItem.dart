@@ -35,6 +35,7 @@ class RecipeListItem extends StatelessWidget {
             ]),
           ),
           new Padding(
+              padding : const EdgeInsets.all(16.0),
               child: new Row(children: <Widget>[
                 new RichText(
                   text: new TextSpan(children: <TextSpan>[
@@ -42,7 +43,7 @@ class RecipeListItem extends StatelessWidget {
                   ]),
                 )
               ]),
-              padding: const EdgeInsets.all(16.0)),
+              ),
         ],
       ),
     );

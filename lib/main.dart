@@ -27,9 +27,10 @@ class RecipeListPage extends StatefulWidget {
 class _RecipeListPageState extends State<RecipeListPage> {
   final GlobalKey<ScrollableState> scrollablekey =
       new GlobalKey<ScrollableState>();
+  final VoidCallback onTap = null;
   List<Widget> _recipes = mockrecipes
       .map((i) => new RecipeListItem(
-          i.title, i.image_url,  i.recipe_id))
+          i.title, i.image_url,  i.recipe_id, null))
       .toList();
   @override
   Widget build(BuildContext context) {

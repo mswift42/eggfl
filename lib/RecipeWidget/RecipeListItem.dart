@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart' show TapGestureRecognizer;
 import 'package:flutter/services.dart' show UrlLauncher;
 
-import 'package:eggflutter/services/Recipe' show Recipe;
+import 'package:eggflutter/services/Recipe.dart' show Recipe;
 
 class LinkTextSpan extends TextSpan {
   LinkTextSpan({TextStyle style, String url, String text})
@@ -41,7 +41,8 @@ class RecipeListItem extends StatelessWidget {
               new RichText(
                 text: new TextSpan(
                   children: <TextSpan>[
-                    new TextSpan(text: recipe.title, style: themeData.textTheme.body1)
+                    new TextSpan(
+                        text: recipe.title, style: themeData.textTheme.body1)
                   ],
                 ),
               )

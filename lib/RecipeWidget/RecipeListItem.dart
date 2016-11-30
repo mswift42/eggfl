@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart' show TapGestureRecognizer;
 import 'package:flutter/services.dart' show UrlLauncher;
 
+import 'package:eggflutter/services/Recipe' show Recipe;
+
 class LinkTextSpan extends TextSpan {
   LinkTextSpan({TextStyle style, String url, String text})
       : super(
@@ -14,12 +16,9 @@ class LinkTextSpan extends TextSpan {
 }
 
 class RecipeListItem extends StatelessWidget {
-  String title;
-  String image_url;
-  String recipe_id;
-
+  final Recipe recipe;
   final VoidCallback onTap;
-  RecipeListItem(this.title, this.image_url, this.recipe_id, this.onTap);
+  RecipeListItem(this.recipe, this.onTap);
 
   @override
   build(BuildContext context) {
@@ -29,10 +28,10 @@ class RecipeListItem extends StatelessWidget {
       child: new Column(
         children: <Widget>[
           new Hero(
-            tag: image_url,
+            tag: recipe.image_url,
             child: new Row(children: <Widget>[
               new Flexible(
-                child: new Image.network(image_url, fit: ImageFit.cover),
+                child: new Image.network(recipe.image_url, fit: ImageFit.cover),
               ),
             ]),
           ),
@@ -42,7 +41,7 @@ class RecipeListItem extends StatelessWidget {
               new RichText(
                 text: new TextSpan(
                   children: <TextSpan>[
-                    new TextSpan(text: title, style: themeData.textTheme.body1)
+                    new TextSpan(text: recipe.title, style: themeData.textTheme.body1)
                   ],
                 ),
               )

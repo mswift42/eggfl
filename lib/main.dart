@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:eggflutter/services/mockRecipeService/MockRecipeService.dart';
 import 'package:eggflutter/RecipeWidget/RecipeWidget.dart' show RecipeWidget;
-import 'package:eggflutter/RecipeWidget/RecipeListItem.dart' show RecipeListItem;
-import 'package:eggflutter/services/Recipe.dart';
+import 'package:eggflutter/RecipeWidget/RecipeListItem.dart'
+    show RecipeListItem;
+import 'package:eggflutter/services/Recipe.dart' show Recipe;
 
 class EggCrackinHome extends StatelessWidget {
   final GlobalKey<ScrollableState> scrollablekey =
@@ -27,11 +28,8 @@ class RecipeListPage extends StatefulWidget {
 class _RecipeListPageState extends State<RecipeListPage> {
   final GlobalKey<ScrollableState> scrollablekey =
       new GlobalKey<ScrollableState>();
-  final VoidCallback onTap = null;
-  List<Widget> _recipes = mockrecipes
-      .map((i) => new RecipeListItem(
-          i.title, i.image_url,  i.recipe_id, null))
-      .toList();
+  List<Widget> _recipes =
+      mockrecipes.map((i) => new RecipeListItem(i, null)).toList();
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -50,16 +48,20 @@ class _RecipeListPageState extends State<RecipeListPage> {
   }
 
   void showRecipeDetail(BuildContext context, Recipe recipe) {
-    Navigator.push(context, new MaterialPageRoute<Null>(
-        settings: const RouteSettings(name: 'eggcrack/recipe'),
-    builder: (BuildContext context) {
-          return new Theme(
-              data: new ThemeData.fallback(),
-          child: new RecipeWidget(recipe.title, recipe.image_url, recipe.publisher,
-          recipe.publisher_url, recipe.recipe_id)
-          );
-    }
-    ))
+    Navigator.push(
+        context,
+        new MaterialPageRoute<Null>(
+            settings: const RouteSettings(name: 'eggcrack/recipe'),
+            builder: (BuildContext context) {
+              return new Theme(
+                  data: new ThemeData.fallback(),
+                  child: new RecipeWidget(
+                      recipe.title,
+                      recipe.image_url,
+                      recipe.publisher,
+                      recipe.publisher_url,
+                      recipe.recipe_id));
+            }));
   }
 }
 
